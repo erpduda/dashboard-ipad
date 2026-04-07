@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="300">
+<style>
+body {
+  background: black;
+  color: #00FF88;
+  font-family: monospace;
+  text-align: center;
+}
+.clock {
+  font-size: 80px;
+  margin-top: 20px;
+}
+.section {
+  margin-top: 30px;
+  font-size: 28px;
+}
+.status {
+  margin-top: 40px;
+  font-size: 24px;
+  color: #FFD000;
+}
+iframe {
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="clock" id="clock"></div>
+
+<div class="section">
+CLIMA - CAXIAS DO SUL<br>
+<iframe src="https://wttr.in/Caxias+do+Sul?format=3" width="300" height="50"></iframe>
+</div>
+
+<div class="section">
+AGENDA<br>
+<iframe src="https://calendar.google.com/calendar/embed?src=erpduda@gmail.com&ctz=America/Sao_Paulo"
+width="800" height="400"></iframe>
+</div>
+
+<div class="status">
+STATUS: OPERACIONAL
+</div>
+
+<script>
+function updateClock() {
+  var now = new Date();
+  document.getElementById('clock').innerHTML =
+    now.getHours().toString().padStart(2, '0') + ":" +
+    now.getMinutes().toString().padStart(2, '0');
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
